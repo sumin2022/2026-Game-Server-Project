@@ -43,6 +43,7 @@
 # Visual Studio
 .vs/
 *.sln
+*.slnx
 *.vcxproj.user
 
 # Build folders
