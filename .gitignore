@@ -62,3 +62,23 @@ x86/
 # Windows
 .DS_Store
 Thumbs.db
+
+# Visual Studio cache
+*.VC.db
+*.VC.opendb
+*.suo
+*.ipch
+
+# Visual Studio temp
+*.sdf
+*.vcxproj.filters
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+compile_commands.json
+
+# build folders
+bin/
+build/
