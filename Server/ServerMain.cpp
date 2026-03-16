@@ -24,9 +24,9 @@ ServerMain::~ServerMain() {
 bool ServerMain::InitServer(int port) {
 	
 	int retval;
-
+	
 	// 소켓 생성
-	listen_sock = socket(AF_INET, SOCK_STREAM, 0);
+	listen_sock = WSASocket(AF_INET, SOCK_STREAM, 0, 0, 0, WSA_FLAG_OVERLAPPED);
 	if (listen_sock == INVALID_SOCKET) {
 		err_quit("socket() 실패");
 		return false;
@@ -86,7 +86,7 @@ void ServerMain::AcceptClient() {
 		int addrlen = sizeof(clientaddr);
 		HANDLE hThread;
 
-		// accept
+		// accept -> AcceptEx() 으로 확장 예정
 		SOCKET client_sock = accept(listen_sock, reinterpret_cast<sockaddr*>(&clientaddr), &addrlen);
 		if (client_sock == INVALID_SOCKET) {
 			err_display("accept()");
